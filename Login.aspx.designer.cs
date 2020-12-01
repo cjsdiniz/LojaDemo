@@ -87,24 +87,6 @@ namespace ProjectoFinal
         protected global::System.Web.UI.WebControls.Button btnLogin;
 
         /// <summary>
-        /// btnRegistar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegistar;
-
-        /// <summary>
-        /// btnCancelar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancelar;
-
-        /// <summary>
         /// lblMensagem control.
         /// </summary>
         /// <remarks>

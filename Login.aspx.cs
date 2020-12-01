@@ -38,7 +38,6 @@ namespace ProjectoFinal
         }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            lblMensagem.Visible = false;
             if (ValidaPassword(tbPassword.Text) == true)
             {
                 SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["citeformaCS"].ConnectionString);
@@ -78,23 +77,13 @@ namespace ProjectoFinal
                     string resposta_perfil = myComm.Parameters["@ret_perfil"].Value.ToString();
 
                     if (resposta == 0)
-                    { 
-
-                        lblMensagem.Visible = true;
                         lblMensagem.Text = "Utilizador ou Palavra-passe errados";
-                    }
                     else if (resposta == 1)
-                    { 
-                        lblMensagem.Visible = true;
                         lblMensagem.Text = "Conta não ativa";
-                    }
                     else if (resposta == 2)
                     {
-                        Session["logged"] = true;
-                        Session["user"] = tbUsername.Text;
-                        Session["pw"] = tbPassword.Text;
                         Session["perfil"] = resposta_perfil;
-                        Response.Redirect("Loja.aspx");
+                        Response.Redirect("encriptacao.aspx");
                     }
 
 
@@ -157,22 +146,5 @@ namespace ProjectoFinal
             return enc;
         }
 
-        protected void btnRegistar_Click(object sender, EventArgs e)
-        {
-            Session["user"] = tbUsername.Text;
-            Session["perfil"] = "novo";
-            Response.Redirect("LoginNew.aspx");
-        }
-
-        protected void tbUsername_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnCancelar_Click(object sender, EventArgs e)
-        {
-            Session.Abandon();
-            Response.Redirect("index.aspx");
-        }
     }
 }

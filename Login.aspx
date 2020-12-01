@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>A Loja dos Livros</title>
+    	<title>Login V15</title>
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!--===============================================================================================-->	
@@ -37,10 +37,9 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-form-title" style="background-image: url(images/bg-01.jpg);">
-					<span class="login100-form-title-1">A Loja dos Livros<br />
-						Entrar                
+					<span class="login100-form-title-1">
+						Sign In
 					</span>
-				
 				</div>
 
 			</div>
@@ -50,7 +49,7 @@
 					    <asp:Label class="label-input100" ID="lblUsername" runat="server" Text="Username"></asp:Label>
 					    <asp:RequiredFieldValidator ID="rfvUsername" runat="server" ControlToValidate="tbUsername" ErrorMessage="Utilizador inválido." ForeColor="Red">*</asp:RequiredFieldValidator>
 						<%--<input class="input100" type="text" name="username" placeholder="Enter username">--%>
-                        <asp:TextBox ID="tbUsername" runat="server" class="input100" type="text" name="username" placeholder="Enter username" OnTextChanged="tbUsername_TextChanged"></asp:TextBox>
+                        <asp:TextBox ID="tbUsername" runat="server" class="input100" type="text" name="username" placeholder="Enter username"></asp:TextBox>
 						<%--<span class="focus-input100"></span>--%>
 					</div>
 
@@ -79,13 +78,10 @@
 					</div>--%>
 
 					<div class="container-login100-form-btn">
+<%--						<button class="login100-form-btn">
+							Login
+						</button>--%>
                         <asp:Button class="login100-form-btn" ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button class="login100-form-btn" ID="btnRegistar" runat="server" Text="Registar" OnClick="btnRegistar_Click" CausesValidation="False" />
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button class="login100-form-btn" ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" CausesValidation="False" />
 					</div>
 				<asp:Label ID="lblMensagem" runat="server" ForeColor="Red" Text="Utilizador ou Password inválidos." Visible="False"></asp:Label>
 				<asp:ValidationSummary ID="vlsLogin" runat="server" ForeColor="Red" Visible="false" />

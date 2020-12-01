@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    	<title>A Loja dos Livros</title>
+    	<title>Login V15</title>
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!--===============================================================================================-->	
@@ -43,8 +43,9 @@
 			<div class="wrap-login100">
 				<div class="login100-form-title" style="background-image: url(images/bg-01.jpg);">
 					<span class="login100-form-title-1">
-						A Loja dos Livros<br />
-                    </span>REGISTO</div>
+						Sign UP
+					</span>
+				</div>
 			</div>
 				<div class="login100-form validate-form">
 					<asp:ValidationSummary ID="vlsLogin" runat="server" ForeColor="Red" DisplayMode="SingleParagraph" />
@@ -53,19 +54,19 @@
 					    <asp:Label class="label-input100" ID="lblNome" runat="server" Text="Nome"></asp:Label>
 					    <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="tbName" ErrorMessage="Indique um nome." ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
                         <asp:TextBox ID="tbName" runat="server" class="input100" type="text" name="name" placeholder="Indique o utilizador"></asp:TextBox>
-                        <%--<span class="focus-input100"></span>--%>
+						<%--<span class="focus-input100"></span>--%>
 					</div>
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Utilizador obrigatório.">
 					    <asp:Label class="label-input100" ID="lblUsername" runat="server" Text="Utilizador"></asp:Label>
 					    <asp:RequiredFieldValidator ID="rfvUsername" runat="server" ControlToValidate="tbUsername" ErrorMessage="Utilizador inválido." ForeColor="Red">*</asp:RequiredFieldValidator>
                         <asp:TextBox ID="tbUsername" runat="server" class="input100" type="text" name="username" placeholder="Indique o utilizador" TabIndex="1"></asp:TextBox>
-                        <%--<span class="focus-input100"></span>--%>
+						<%--<span class="focus-input100"></span>--%>
 					</div>
 					<div class="wrap-input100 validate-input m-b-26" data-validate = "Password é obrigatória.">
 					    <asp:Label class="label-input100" ID="lblPassword" runat="server" Text="Password"></asp:Label>
 					    <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="tbPassword" ErrorMessage="Password inválida." ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
                        <asp:TextBox ID="tbPassword" runat="server" class="input100" type="password" name="pass" placeholder="Indique a password" TabIndex="2"></asp:TextBox>
-                        <%--<span class="focus-input100"></span>--%>
+						<%--<span class="focus-input100"></span>--%>
 					</div>
 					<div class="wrap-input100 validate-input m-b-26" data-validate = "">
 					    <asp:Label class="label-input100" ID="lblEmail" runat="server" Text="E-Mail"></asp:Label>
@@ -74,7 +75,7 @@
 							ErrorMessage="Email mal formado." ForeColor="Red" 
 							ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" TabIndex="3"></asp:RegularExpressionValidator>
                        <asp:TextBox ID="tbEmail" runat="server" class="input100" type="email" name="email" placeholder="Indique o email"></asp:TextBox>
-                        <%--					<span class="focus-input100">
+	<%--					<span class="focus-input100">
                         </span>--%>
 					</div>
                    <div class="wrap-input100 validate-input m-b-26" data-validate = "Perfil é obrigatório.">
@@ -83,11 +84,7 @@
 					    <asp:SqlDataSource ID="sqldsCiteforma" runat="server" ConnectionString="<%$ ConnectionStrings:citeformaCS %>" SelectCommand="SELECT * FROM [perfil]"></asp:SqlDataSource>
 					</div>
 					<div class="container-login100-form-btn">
-                        <asp:Button class="login100-form-btn" ID="btnLoginNew" runat="server" Text="Criar" OnClick="btnLoginNew_Click" />
-  						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<asp:Button class="login100-form-btn" ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" CausesValidation="False" />
+                        <asp:Button class="login100-form-btn" ID="btnLoginNew" runat="server" Text="Adicionar" OnClick="btnLoginNew_Click" />
 					</div>
 			</div>
 		</div>

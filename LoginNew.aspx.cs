@@ -22,24 +22,8 @@ namespace ProjectoFinal
             tbEmail.Text = null;
         }
         protected void Page_Load(object sender, EventArgs e)
-        { 
-            
-            if (Session["perfil"] == null)
-            {
-                Session.Abandon();
-                Response.Redirect("index.aspx");
-            }
-
-            if (Session["perfil"].ToString() == "novo") // Novo registo de user
-            {
-                lblPerfil.Visible = false;
-                ddlPerfil.Visible = false;
-            }
-            else
-            { 
-                tbUsername.Text=Session["User"].ToString();
-            }
-
+        {
+          
         }
 
         bool ValidaPassword(string pw)
@@ -80,10 +64,7 @@ namespace ProjectoFinal
                 {
                     myComm.Parameters.AddWithValue("@email",this.tbEmail.Text);
                 }
-                if (Session["perfil"].ToString() == "novo")
-                    myComm.Parameters.AddWithValue("@id_perfil", 3);
-                else
-                    myComm.Parameters.AddWithValue("@id_perfil", this.ddlPerfil.SelectedValue);
+                myComm.Parameters.AddWithValue("@id_perfil",this.ddlPerfil.SelectedValue);
                 myComm.Parameters.AddWithValue("@activo",1);
 
                 SqlParameter par = new SqlParameter();
@@ -173,12 +154,6 @@ namespace ProjectoFinal
             enc = enc.Replace("/", "JJJ");
             enc = enc.Replace("\\", "III");
             return enc;
-        }
-
-        protected void btnCancelar_Click(object sender, EventArgs e)
-        {
-            Session.Abandon();
-            Response.Redirect("index.aspx");
         }
     }
 }
